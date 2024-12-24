@@ -2,6 +2,7 @@ import React from 'react'
 import './budget.scss'
 import { ArrowRight } from 'iconoir-react'
 import Button from '../button/Button'
+import { truncateText } from '../../middleware/middleware'
 
 export default function Budget({type}) {
 
@@ -15,12 +16,12 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p>Budget Implementation Report <ArrowRight width={18} /></p>
+                <p> Annual Budget Appropiation Bill <ArrowRight width={18} /></p>
 
-                <span>Periodical reports detailing the progress made by the government in executing the projects and objectives outlined in the approved budget</span>
+                <span> { truncateText("The Annual Appropriation Law is the Annual Budget (Appropriation Bill) passed by the State House of Assembly, and signed into law by Mr. Governor", 100) } </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = '/budget/annual_budget_bill' />
                 </div>
 
             </div>
@@ -33,12 +34,12 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p>Audited Statement <ArrowRight width={18} /></p>
+                <p> Annual Budget Appropriation Law <ArrowRight width={18} /></p>
 
-                <span>This contains the consolidated statement of actual state revenues and expenditure as well as the independent opinion of the state’s...</span>
+                <span> { truncateText("The Annual Appropriation Bill also known as the Annual Budget, is the budget as prepared and approved by the State Executive Council and presented to the State House of Assembly for deliberation and approval", 100) } </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = "/budget/annual_budget_law" />
                 </div>
 
             </div>
@@ -51,12 +52,12 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p>Approved Budget<ArrowRight width={18} /></p>
+                <p> Audited Financial Statement <ArrowRight width={18} /></p>
 
-                <span>This is the product of the State Assembly’s discussions on the executive budget proposal. The assembly makes modifications...</span>
+                <span> { truncateText("Lagos state government’s audited financial statement is a crucial report that assesses its financial performance and compliance. It provides transparency, accountability, and vital information for budgetary decisions and public trust.", 100) } </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = "budget/audited_financial_statement" />
                 </div>
 
             </div>
@@ -69,12 +70,12 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p>Proposed Budget<ArrowRight width={18} /></p>
+                <p> States Fiscal Transparency, Accountability, and Sustainability <ArrowRight width={18} /></p>
 
-                <span>The government’s revenue generation and spending plan as prepared by MDAs and the budget office/ministry...</span>
+                <span>  { truncateText("The States Fiscal Transparency, Accountability, and Sustainability (SFTAS) scheme was set up to strengthen the fiscal transparency, accountability, and sustainability of the budgetary process for all participating States. Initiated by the Federal government and supported by the World Bank, its goal is to provide grants to States that have complied with the annual eligibility criteria to the extent of their compliance.", 100) }  </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = "budget/sftas" />
                 </div>
 
             </div>
@@ -89,10 +90,10 @@ export default function Budget({type}) {
 
                 <p>Citizen Budget<ArrowRight width={18} /></p>
 
-                <span>A visual and simplified version of the approved budget produced with citizen’s understanding and engagement...</span>
+                <span> { truncateText("The Citizen's Budget is a short explanation of the approved budget. It breaks down the budget to showcase major plans to be executed for the year for easy consumption by the citizens.", 100) } </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = "/budget/citizens_budget" />
                 </div>
 
             </div>
@@ -105,12 +106,12 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p>Policy Statement<ArrowRight width={18} /></p>
+                <p> Budget Performance Report <ArrowRight width={18} /></p>
 
-                <span>Documents outlining policy directions and specifics of the state. This can include the Medium Term Expenditure Framework, long term visioning...</span>
+                <span> { truncateText("The Quarterly Budget Performance Review is designed to evaluate the implementation of the budget to verify if the budget is performing according..", 100) } </span>
 
                 <div className="butt">
-                    <Button content  = 'View Document' type = 'button__main' />
+                    <Button content  = 'View Document' type = 'button__main' to = "/budget/qbpr" />
                 </div>
 
             </div>

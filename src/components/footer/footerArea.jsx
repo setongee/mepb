@@ -38,10 +38,10 @@ export default function Footer() {
 
                 <div className="socialsIcon flex">
 
-                  <a target = '_blank' href='https://www.instagram.com/lagoshealth/' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
-                  <a target = '_blank' href = 'https://twitter.com/LSMOH' className="icon"><X width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://web.facebook.com/lsmoh' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://www.instagram.com/lagoshealth/' className="icon"><Youtube width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href='https://www.instagram.com/lagosmepb/?hl=en' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href = 'https://x.com/LagosMepb' className="icon"><X width={22} strokeWidth={1.6}/></a>
+                  <a target = '_blank' href='https://web.facebook.com/lagosmepb/?_rdc=1&_rdr' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
+                  <a target = '_blank' href='https://www.youtube.com/@lagosmepb' className="icon"><Youtube width={22} strokeWidth={1.6}/></a> 
 
                 </div>
 
@@ -63,7 +63,7 @@ export default function Footer() {
 
                         </a>
 
-                        <a href = 'mailto:health@lagosstate.gov.ng' target='_Blank' className='flex font__14 gap__15 dark'> 
+                        <a href = 'mailto:mepb@lagosstate.gov.ng' target='_Blank' className='flex font__14 gap__15 dark'> 
 
                             <div className="icon"> <Mail/> </div> 
 

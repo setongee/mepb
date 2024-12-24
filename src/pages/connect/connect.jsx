@@ -39,10 +39,10 @@ export default function Connect() {
             <div className="socials__time flex">
                 <p>Connect with us on our socials, <span className="e">Stay up-to-date!</span> </p>
                 <div className="account flex gap__30">
-                    <a target='_Blank' href="https://www.instagram.com/lagoshealth/"><Instagram/></a>
-                    <a target='_Blank' href="https://x.com/LSMOH"><X/></a>
-                    <a target='_Blank' href="https://www.youtube.com/channel/UCZzZf_6m2Wm60fBNKp0-l3w"><Youtube/></a>
-                    <a target='_Blank' href="https://web.facebook.com/lsmoh"><Facebook/></a>
+                    <a target='_Blank' href="https://www.instagram.com/lagosmepb/?hl=en"><Instagram/></a>
+                    <a target='_Blank' href="https://x.com/LagosMepb"><X/></a>
+                    <a target='_Blank' href="https://www.youtube.com/@lagosmepb"><Youtube/></a>
+                    <a target='_Blank' href="https://web.facebook.com/lagosmepb/?_rdc=1&_rdr"><Facebook/></a>
                 </div>
             </div>
 

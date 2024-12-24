@@ -111,7 +111,7 @@ export default function Header() {
 
                 </li>
 
-                <li id='nav' className='flex flex__align__center' data-navigation = 'resources'>
+                <li id='nav' className='flex flex__align__center' data-navigation = 'budget'>
                   <a className='dark  font__12 text__trend letter__spacing__2' href="/budget">Budget Documents</a>
                 </li>
 

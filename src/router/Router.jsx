@@ -14,6 +14,12 @@ import BudgetPage from '../pages/budget/budgetPage';
 import News_Events from '../pages/news_events/News_Events';
 import News_view from '../pages/news_events/news_view';
 import Connect from '../pages/connect/connect';
+import AnnuaBudgetBill from '../pages/budget/budgetDocs/AnnuaBudgetBill';
+import AnnualBudgetLaw from '../pages/budget/budgetDocs/AnnualBudgetLaw';
+import AuditedFinancialStatement from '../pages/budget/budgetDocs/AuditedFinancialStatement';
+import CitizensBudget from '../pages/budget/budgetDocs/CitizensBudget';
+import SFTAS from '../pages/budget/budgetDocs/SFTAS';
+import QBPR from '../pages/budget/budgetDocs/QBPR';
 
   const router = createBrowserRouter([
     {
@@ -61,7 +67,36 @@ import Connect from '../pages/connect/connect';
         },
         {
           path: "budget",
-          element: <BudgetPage/>
+          children : [
+            {
+              path : "",
+              element: <BudgetPage/>
+            },
+            {
+              path : "annual_budget_bill",
+              element: <AnnuaBudgetBill/>
+            },
+            {
+              path : "annual_budget_law",
+              element: <AnnualBudgetLaw/>
+            },
+            {
+              path : "audited_financial_statement",
+              element: <AuditedFinancialStatement/>
+            },
+            {
+              path : "citizens_budget",
+              element: <CitizensBudget/>
+            },
+            {
+              path : "sftas",
+              element: <SFTAS/>
+            },
+            {
+              path : "qbpr",
+              element: <QBPR/>
+            }
+          ]
         },
         {
           path: "connect",
