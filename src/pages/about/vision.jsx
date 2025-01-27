@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './about.scss'
 import Container from '../../components/container/Container'
 import Button from '../../components/button/Button'
@@ -11,8 +11,20 @@ import two from '../../assets/mepb/Intersection 4.png'
 import three from '../../assets/mepb/Intersection 5.png'
 import four from '../../assets/mepb/Intersection 6.png'
 import five from '../../assets/mepb/Intersection 7.png'
+import { getAdminData } from '../../api/core/admin'
 
 export default function Vision() {
+
+  const[data, setData] = useState({})
+
+  useEffect(() => {
+
+    getAdminData("mepb").then( res => {
+        setData(res[0]);
+    } )
+
+}, []); 
+
   return (
     <div className="about">
 
@@ -40,7 +52,7 @@ export default function Vision() {
 
                     <div className="main">Our Vision</div>
                     <div className="tag text__trend font__12">Who we are</div>
-                    <div className="sub__text">To be the primary agency of government that facilitates efficient and effective mobilisation, planning, allocation and utilization of resources for socio-economic transformation of Lagos State.</div>
+                    <div className="sub__text"> {data?.vision} </div>
 
                   </div>
 
@@ -54,7 +66,7 @@ export default function Vision() {
 
                     <div className="main">Our Mission</div>
                     <div className="tag text__trend font__12">What we do</div>
-                    <div className="sub__text">Ensuring continuous and dynamic socio-economic policies through prudent and equitable resource management in Lagos State.</div>
+                    <div className="sub__text"> {data?.mission} </div>
 
                   </div>
 

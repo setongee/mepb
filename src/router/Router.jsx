@@ -20,6 +20,7 @@ import AuditedFinancialStatement from '../pages/budget/budgetDocs/AuditedFinanci
 import CitizensBudget from '../pages/budget/budgetDocs/CitizensBudget';
 import SFTAS from '../pages/budget/budgetDocs/SFTAS';
 import QBPR from '../pages/budget/budgetDocs/QBPR';
+import Authy from '../admin/authy';
 
   const router = createBrowserRouter([
     {
@@ -62,6 +63,19 @@ import QBPR from '../pages/budget/budgetDocs/QBPR';
             {
               path : "view/:id",
               element : <News_view/>
+            }
+          ]
+        },
+        {
+          path : "admin",
+          children : [
+            {
+              path : "",
+              element : <Authy/>
+            },
+            {
+              path : ":page",
+              element : <Authy/>
             }
           ]
         },

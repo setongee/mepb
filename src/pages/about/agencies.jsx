@@ -1,9 +1,44 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import '../../styles/card__ui.scss'
 import { ArrowUpRight, Cellar, City, Hospital } from 'iconoir-react'
+import { getAdminData } from '../../api/core/admin';
+
+import dept from '../../assets/MDA/department.svg'
 
 export default function Agencies() {
+
+  const [agency, setAgency] = useState({});
+
+useEffect(() => {
+
+    getAdminData("mepb")
+    .then( res => {
+        refixArr(res[0].agencies);
+    } )
+
+}, []);  
+
+const refixArr = (q) => {
+
+    const newObj = {};
+
+    q.forEach(e => {
+        
+        if(!newObj[e.category]){
+
+            newObj[e.category] = { name : e.category, data : [] }
+
+        }
+
+        newObj[e.category].data.push(e)
+
+    });
+
+    setAgency(newObj);
+
+}
+
   return (
     <div className="about__sections">
 
@@ -17,271 +52,49 @@ export default function Agencies() {
 
             </div>
 
-            <section id='agency' className = "multi" >
+            <div id="agency">
+            
+                {
+                    Object.entries(agency).map( (e, index) => (
 
-                <h1>Agencies</h1>
+                        <section id={ e[0] === "department" ? "directorates" : e[0] } className = "multi" key = {index}>
 
-                <div className="mda__card__ui flex gap__20">
+                            <h1> {e[0]} </h1>
 
-                    <div className="mda__card">
+                            <div className="mda__card__ui flex gap__20">
 
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
+                                {
+                                    e[1].data.map( (res, index) => (
 
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
+                                        <div className="mda__card" key = {index}>
 
-                    </div>
+                                            <div className="iconHolder">
 
-                    <div className="mda__card">
+                                                <div className="card__photo">
+                                                    <img src = {dept} />
+                                                </div>
 
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
+                                            </div>
 
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
+                                            <div className="card__content">
 
-                    </div>
+                                            <p>{res.name}</p>
+                                            <span> <Cellar/> {e[0]} </span>
+                                                
+                                            </div>
 
-                     <div className="mda__card">
+                                        </div>
+                                    ) )
+                                }
 
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
+                            </div>
 
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
+                        </section>
 
-                    </div>
-
-                     <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos State Health Service Commission" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Lagos State Health Service Commission</p>
-                          <span> <Hospital/> Agency</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <section id="directorates" className = "multi" >
-
-                <h1>Directorates</h1>
-              
-                <div className="mda__card__ui flex gap__20">
-
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Economic Planning Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Economic Planning Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Budget Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Budget Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Monitoring and Evaluation Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Monitoring and Evaluation Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Lagos Bureau of Statistics" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Lagos Bureau of Statistics</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Development Partnership Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Development Partnership Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Finance and Administration Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Finance and Administration Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Accounts Department" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Accounts Department</p>
-                          <span> <Cellar/> Directorates</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <section id="units" className = "multi" >
-              
-              <h1>Units</h1>
-              
-                <div className="mda__card__ui flex gap__20">
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Public Relations Unit" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Public Relations Unit</p>
-                          <span> <City/> Units</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="ICT Unit" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>ICT Unit</p>
-                          <span> <City/> Units</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Planning Unit" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Planning Unit</p>
-                          <span> <City/> Units</span>
-                        </div>
-
-                    </div>
-
-                    <div className="mda__card">
-
-                        <div className="card__photo">
-                          <img src="https://lagosministryofhealth.org/wp-content/uploads/2022/03/hsc.jpg" alt="Procurement Unit" />
-                        </div>
-
-                        <div className="card__content">
-                          <p>Procurement Unit</p>
-                          <span> <City/> Units</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
+                    ) )
+                }
+                
+            </div>
 
         </Container>
 

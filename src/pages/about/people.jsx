@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import Footer from '../../components/footer/footerArea'
 import '../../styles/gallery.scss'
 
+import { getAdminData } from '../../api/core/admin'
+import { convertToTitleCase } from '../../middleware/middleware'
+
 export default function People() {
+
+    const[data, setData] = useState({})
+    
+      useEffect(() => {
+    
+        getAdminData("mepb").then( res => {
+            setData(res[0]);
+        } )
+    
+    }, []); 
 
   return (
     <div className="about__sections">
@@ -18,126 +31,28 @@ export default function People() {
 
             </div>
 
-            <div className="gallery__mda">
+            <div className="gallery__mda gallx">
 
                 <section>
 
-                    <a href='#' className="pic">
+                    {
+                        data.people?.length ? data.people.map( (res, index) => (
 
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2023/10/e1dd3830-f092-46be-ab02-80401bcc28db.jpeg" alt="" />
-                        </div>
+                            <a className="pic" key = {index} >
 
-                        <div className="name__card">
-                            <span>Honourable Commissioner</span>
-                            <p>Mr. Mosopefolu George</p>
-                        </div>
+                                <div className="pic__holder">
+                                    <img src={res.photo} alt= { `${res.name}_${res.role}` } />
+                                </div>
 
-                    </a>
+                                <div className="name__card">
+                                    <span> {res.role} </span>
+                                    <p> { convertToTitleCase( res.name ) } </p>
+                                </div>
 
-                    <a href='#' className="pic">
+                            </a>
 
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2023/10/e7b1f3c4-c41b-4fa4-b573-c55b95d9ba50.jpeg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Special Adviser</span>
-                            <p>Mr. Lekan Balogun</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2023/04/obajjmmm.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Permanent Secretary</span>
-                            <p>Ibrahim Amodu, Obajomo</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2022/11/BUDGETGGHJ.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Director Administration & Human Resources</span>
-                            <p>Mrs. Adeyemi-Fashola Mojisola nee Handu</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2021/09/bureau.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Ope-head, Lagos Bureau of Statistics</span>
-                            <p>Mr. Bashiru Temitayo Oseni</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2022/11/DIKK.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Director, Budget</span>
-                            <p>Mr. Olajide, Emmanuel Aderemi</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2023/10/79eea511-2f5e-493e-9b5b-68a16f332642.jpeg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Director, Project Monitoring and Evaluation</span>
-                            <p>Oyede (Mr) Fouad Adepoju</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2023/04/vcx.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Director, Economic Planning</span>
-                            <p>Mr. Ogunsola Banjo Rufus</p>
-                        </div>
-
-                    </a>
-
-                    <a href='#' className="pic">
-
-                        <div className="pic__holder">
-                            <img src="https://mepb.lagosstate.gov.ng/wp-content/uploads/sites/29/2022/11/PRG.jpg" alt="" />
-                        </div>
-
-                        <div className="name__card">
-                            <span>Director, Social Protection Coordinating Department</span>
-                            <p>Mrs. Oluwakemi Amudat Adedeji</p>
-                        </div>
-
-                    </a>
+                        ) ) : null
+                    }
 
                 </section>
 

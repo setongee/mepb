@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import Button from '../../components/button/Button'
 import './home.scss'
 import stat from '../../assets/landing/stats.png'
+
+import { getAdminData } from '../../api/core/admin'
 
 // pdf
 
@@ -15,14 +17,22 @@ import QBPR_Q1 from "../../pages/budget/budgetDocs/pdf/qbpr/Lagos State 2024 Q1 
 import FIN_2022 from "../../pages/budget/budgetDocs/pdf/afs/2022-LASG-IPSAS-FINANCIAL-STATEMENTS-2021.pdf"
 import AB_2023 from "../../pages/budget/budgetDocs/pdf/aab/APPROPRIATION LAW 2023  (LSPC)  Signed.pdf"
 
-
-
 import Newsroom from '../../components/newsroom/newsroom'
 import Footer from '../../components/footer/footerArea'
-import { ArrowRight } from 'iconoir-react'
 import Budget from '../../components/budget/budget'
 
 export default function Home() {
+
+    const[data, setData] = useState({})
+    
+      useEffect(() => {
+    
+        getAdminData("mepb").then( res => {
+            setData(res[0]);
+        } )
+    
+    }, []); 
+
   return (
     <div className="home">
 
@@ -66,7 +76,7 @@ export default function Home() {
                 <div className="budget__card">
 
                     <div className="tiny">2024 Budget Size</div>
-                    <p>N2.267tn</p>
+                    <p> {data?.statistics?.budgetSize} </p>
                     
                 </div>
 
@@ -75,7 +85,7 @@ export default function Home() {
                 <div className="budget__card">
 
                     <div className="tiny">2024 Recurrent Expenditure</div>
-                    <p>N952.4bn</p>
+                    <p> {data?.statistics?.expenditure} </p>
                     
                 </div>
 
@@ -84,7 +94,7 @@ export default function Home() {
                 <div className="budget__card">
 
                     <div className="tiny"> 2024 Capital Expenditure</div>
-                    <p>N1.332tn</p>
+                    <p> {data?.statistics?.capex} </p>
                     
                 </div>
 
@@ -93,7 +103,7 @@ export default function Home() {
                 <div className="budget__card">
 
                     <div className="tiny">2024 IGR</div>
-                    <p>N1.251tn</p>
+                    <p> {data?.statistics?.igr} </p>
                     
                 </div>
                 

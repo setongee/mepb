@@ -1,11 +1,8 @@
 section{
 
-    margin: 50px 0;
-
     &.multi{
 
-        border-bottom: 1px solid #eee;
-        padding-bottom: 50px;
+        margin-bottom: 30px;
         
     }
 
@@ -23,18 +20,20 @@ section{
 
     .mda__card{
 
-        width: 23.5%;
+        width: 300px;
         position: relative;
         cursor: pointer;
         box-shadow: 1px 3px 25px rgba($color: #000000, $alpha: .05);
         background-color: #fff;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
 
         .card__photo{
 
-            width: 100%;
-            height: 150px;
-            background-color: teal;
-            overflow: hidden;
+            width: 35px;
+            height: 35px;
 
             img{
                 width: 100%;
@@ -47,16 +46,13 @@ section{
 
         .card__content{
 
-            padding: 20px;
-            border-top: 1px solid #eee;
-            margin-top: 20px;
             display: flex;
             align-items: center;
             flex-direction: column;
             gap: 10px;
 
             p{
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 700;
                 text-align: center;
             }
@@ -100,35 +96,13 @@ section{
 
 }
 
-#directorates{
-    .mda__card__ui{
-        .mda__card{
-            .card__content{
-                span{
-
-                    background-color: rgb(255, 239, 203);
-                    color: rgb(94, 69, 0);
-                    
-                }
-            }
-        }
-    }
-}
-
-#units{
-
-    border: none;
+@media(max-width : 768px){
 
     .mda__card__ui{
-        .mda__card{
-            .card__content{
-                span{
 
-                    background-color: rgb(255, 203, 208);
-                    color: rgb(94, 0, 14);
-                    
-                }
-            }
-        }
+        justify-content: center;
+
     }
+    
 }
+
