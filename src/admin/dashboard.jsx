@@ -10,8 +10,6 @@ import { getAdminData } from '../api/core/admin'
 import Responsibilities from './pages/responsibilities'
 import People from './pages/people'
 import Contact from './pages/contact'
-import Resources from './pages/resources'
-import Statistics from './pages/statistics'
 
 const Dashboard = () => {
 
@@ -23,7 +21,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     
-    getAdminData("mepb")
+    getAdminData("mot")
     .then( res => setData(res[0]) )
 
     if (page === undefined){
@@ -40,6 +38,7 @@ const Dashboard = () => {
 
   }, []);
 
+
   const getPage = () => {
 
       if(page == "vision") return <Vision inData = {data} />
@@ -48,11 +47,7 @@ const Dashboard = () => {
 
       if(page == "responsibility") return <Responsibilities inData = {data}/>
 
-      if(page == "resources") return <Resources inData = {data}/>
-
       if(page == "people") return <People inData = {data}/>
-
-      if(page == "statistics") return <Statistics inData = {data}/>
 
       if(page == "contact_info") return <Contact inData = {data}/>
 

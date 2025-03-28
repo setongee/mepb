@@ -12,7 +12,7 @@ export default function Connect() {
     
       useEffect(() => {
     
-        getAdminData("mepb").then( res => {
+        getAdminData("mot").then( res => {
             setData(res[0].contact);
         } )
     

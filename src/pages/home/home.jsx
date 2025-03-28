@@ -2,24 +2,17 @@ import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import Button from '../../components/button/Button'
 import './home.scss'
-import stat from '../../assets/landing/stats.png'
+import landingAsset from '../../assets/landing/landing.png'
 
 import { getAdminData } from '../../api/core/admin'
 
-// pdf
+import { ArrowUpRight } from 'iconoir-react'
 
-import CB_2024 from "../../pages/budget/budgetDocs/pdf/cb/Y2024-CITIZENS-BUDGET.pdf"
-import AB_2024 from "../../pages/budget/budgetDocs/pdf/aab/Y-2024-Appropriation-law-in-Published-NCoA-format.pdf"
-import FIN_2023 from "../../pages/budget/budgetDocs/pdf/afs/YEAR-2023-FINANCIAL-STATEMENT.pdf"
-import QBPR_Q3 from "../../pages/budget/budgetDocs/pdf/qbpr/Y2023-Q3-Lagos-State-Budget-Performance-Report.pdf"
-import QBPR_Q2 from "../../pages/budget/budgetDocs/pdf/qbpr/Lagos_State_2024_Q2_BPR_Publication.pdf"
-import QBPR_Q1 from "../../pages/budget/budgetDocs/pdf/qbpr/Lagos State 2024 Q1 BPR.pdf"
-import FIN_2022 from "../../pages/budget/budgetDocs/pdf/afs/2022-LASG-IPSAS-FINANCIAL-STATEMENTS-2021.pdf"
-import AB_2023 from "../../pages/budget/budgetDocs/pdf/aab/APPROPRIATION LAW 2023  (LSPC)  Signed.pdf"
-
+// services photos
+import Services from '../../components/Services/Services'
+import Achievements from '../../components/Achievements/Achievements'
 import Newsroom from '../../components/newsroom/newsroom'
 import Footer from '../../components/footer/footerArea'
-import Budget from '../../components/budget/budget'
 
 export default function Home() {
 
@@ -27,7 +20,7 @@ export default function Home() {
     
       useEffect(() => {
     
-        getAdminData("mepb").then( res => {
+        getAdminData("mot").then( res => {
             setData(res[0]);
         } )
     
@@ -38,29 +31,28 @@ export default function Home() {
 
         <div className="tippytoe">
 
-            <div className="lines line_a"></div>
-            <div className="lines line_b"></div>
-            <div className="lines line_c"></div>
-            <div className="lines line_d"></div>
-            <div className="lines line_e"></div>
-            <div className="lines line_f"></div>
-
             <Container>
 
                 <div className="landing__area">
 
                     <div className="text__part">
 
-                        {/* <span className='toptap' >Ministry of Economic,Planning and Budget</span> */}
-
-                        <h1>Building a Resilient Lagos through <span>Data-Driven Planning</span> and Effective <span>Budgeting</span></h1>
+                        <h1>Building a <span>Safe, Efficient & Integrated</span> Transport System for Lagos State </h1>
                         
-                        <p>Empowering Lagos with strategic insights and responsible budgeting to ensure sustainable growth and economic resilience.</p>
+                        <p>Empowering mobility with sustainable infrastructure, seamless multi-modal transport, and sectoral growth for a thriving Lagos State.</p>
 
-                        {/* <div className="button__mobile">Explore Mepb</div> */}
+                        <div className="quick__summary flex">
 
-                        <Button content="explore mepb" styles = {{backgroundColor : "#90ee90", color : "#131313"}} type = 'button__main' arrow = {true} arrow__type='down' to = "#quickdocs" />
+                            <a href='/about/vision' className="qLink flex color__success__text mb"> Find Out more <ArrowUpRight/> </a>
+                            <div className="line_q"></div>
+                            <a href="#achievements" className="qLink freem"> See our achievements </a>
 
+                        </div>
+
+                    </div>
+
+                    <div className="landingAsset">
+                        <img src={landingAsset} alt="Ministry of Transportation Landing Page Asset" />
                     </div>
 
                 </div>
@@ -69,112 +61,13 @@ export default function Home() {
 
         </div>
 
-        <Container>
+        {/* Quick Services for Transportation */}
 
-            <div className="budgetting flex">
+        <Services/>
 
-                <div className="budget__card">
+        {/* Achievements */}
 
-                    <div className="tiny">2024 Budget Size</div>
-                    <p> {data?.statistics?.budgetSize} </p>
-                    
-                </div>
-
-                <div className="divider"></div>
-
-                <div className="budget__card">
-
-                    <div className="tiny">2024 Recurrent Expenditure</div>
-                    <p> {data?.statistics?.expenditure} </p>
-                    
-                </div>
-
-                <div className="divider"></div>
-
-                <div className="budget__card">
-
-                    <div className="tiny"> 2024 Capital Expenditure</div>
-                    <p> {data?.statistics?.capex} </p>
-                    
-                </div>
-
-                <div className="divider"></div>
-
-                <div className="budget__card">
-
-                    <div className="tiny">2024 IGR</div>
-                    <p> {data?.statistics?.igr} </p>
-                    
-                </div>
-                
-
-            </div>
-
-            <div className="quickLinksPoint" id='quickdocs'>
-
-                <div className="pointB">
-
-                    <div className="topic">
-
-                        Access Lagos State Budgets, Statistics, and Development Plans.
-
-                        <div className="sub">
-                            Empowering informed decisions with accessible data, budget transparency, and strategic planning for Lagos.
-                        </div>
-
-                        <Button content  = 'Discover More' type = 'button__main' arrow = {true} arrow__type='down' to = "#budget" />
-
-                    </div>
-
-                    <div className="pointA">
-
-                        <div className="docs">
-
-                            <a href={CB_2024} download > Y2024 Lagos State Approved Citizen's Budget </a>
-
-                            <a href={AB_2024} download > Y2024 Lagos State Signed Appropriation Bill </a>
-
-                            <a href={FIN_2023} download > Y2023 Lagos State Audited Financial Statement</a>
-
-                            <a href={QBPR_Q3} download > Y2024 Lagos State Quarterly Budget Performance Review (Q3) </a>
-
-                            <a href={QBPR_Q2} download > Y2024 Lagos State Quarterly Budget Performance Review (Q2) </a>
-
-                            <a href={QBPR_Q1} download > Y2024 Lagos State Quarterly Budget Performance Review (Q1) </a>
-
-                            <a href={FIN_2022} download > Y2022 Lagos State Audited FInancial Statement</a>
-
-                            <a href={AB_2023} download > Y2023 Lagos State Signed Appropriation Bill </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                
-            </div>
-
-            <div className="title-cy" id='budget'>Budget Documents</div>
-
-            <Budget/>
-            
-        </Container>
-
-        <div className="news">
-
-          <Newsroom/>
-
-        </div>
-
-        {/* <div className="news-flat">
-
-            <Container>
-
-                <Newsroom/>
-
-            </Container>
-            
-        </div> */}
+        <Achievements/>
 
         <Footer/>
 

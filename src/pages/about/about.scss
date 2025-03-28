@@ -3,7 +3,7 @@
     .about__details{
         line-height: 30px;
         font-size: 17px;
-        background-color: #edf2f1;
+        background-color: #fff;
         margin-top: 20px;
         padding: 100px;
     }
@@ -238,7 +238,6 @@
 
     .holder{
 
-        background-color: #fff;
         text-align: justify;
         margin: 0 auto;
         margin-top: 70px;
@@ -250,7 +249,6 @@
                 .lead{
                     font-size: 24px;
                     font-weight: 600;
-                    margin-bottom: 20px;
                     color: #108a00;
                 }
 
@@ -268,10 +266,22 @@
             font-size: 17px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 0px;
             line-height: 30px;
             padding: 50px 0;
             font-weight: 500;
+
+            ol{
+
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding-left: 20px;
+
+                li{
+                    list-style-type:lower-roman !important;
+                }
+            }
         }
 
     }
@@ -410,8 +420,7 @@
 
         .holder{
     
-            background-color: #fff;
-            text-align: justify;
+            text-align: left;
             margin: 0 auto;
             margin-top: 40px;
     
@@ -422,7 +431,7 @@
                     .lead{
                         font-size: 21px;
                         font-weight: 600;
-                        margin-bottom: 20px;
+                        margin-bottom: 0px;
                         text-align: center;
                         color: #108a00;
                     }
@@ -441,7 +450,6 @@
                 font-size: 17px;
                 display: flex;
                 flex-direction: column;
-                gap: 25px;
                 line-height: 27px;
                 padding: 50px 0;
                 font-weight: 500;

@@ -38,6 +38,8 @@ const Vision = ({inData}) => {
     })
     .catch(err => console.log(err));
 
+    console.log(data._id);
+
   }
 
 
@@ -79,11 +81,11 @@ const Vision = ({inData}) => {
 
               <div className="tag">Our Vision</div>
 
-              <div className="previewArea"> { data.vision } </div>
+              <div className="previewArea"> { data?.vision } </div>
 
               <div className="form__action">
 
-                <textarea name="vision" placeholder = "Enter vision" value={data.vision} onChange={ e => setData( { ...data, vision : e.target.value } ) } ></textarea>
+                <textarea name="vision" placeholder = "Enter vision" value={data?.vision} onChange={ e => setData( { ...data, vision : e.target.value } ) } ></textarea>
               
               </div>
 
@@ -93,11 +95,11 @@ const Vision = ({inData}) => {
 
             <div className="tag">Our Mission</div>
 
-            <div className="previewArea"> { data.mission } </div>
+            <div className="previewArea"> { data?.mission } </div>
 
             <div className="form__action">
 
-              <textarea name="mission" placeholder = "Enter mission" value={data.mission} onChange={ e => setData( { ...data, mission : e.target.value } ) } ></textarea>
+              <textarea name="mission" placeholder = "Enter mission" value={data?.mission} onChange={ e => setData( { ...data, mission : e.target.value } ) } ></textarea>
             
             </div>
 

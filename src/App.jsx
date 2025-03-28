@@ -24,7 +24,7 @@ export default function App() {
     <div className="mda__app">
 
       <div className='headpart'>
-        <Rrs/>
+        {/* <Rrs/> */}
         <Header/>
       </div>
 

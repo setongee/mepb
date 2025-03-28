@@ -10,23 +10,18 @@ import Vision from '../pages/about/vision';
 import Responsibilities from '../pages/about/responsibilities';
 import People from '../pages/about/people';
 import Agencies from '../pages/about/agencies';
-import BudgetPage from '../pages/budget/budgetPage';
 import News_Events from '../pages/news_events/News_Events';
 import News_view from '../pages/news_events/news_view';
 import Connect from '../pages/connect/connect';
-import AnnuaBudgetBill from '../pages/budget/budgetDocs/AnnuaBudgetBill';
-import AnnualBudgetLaw from '../pages/budget/budgetDocs/AnnualBudgetLaw';
-import AuditedFinancialStatement from '../pages/budget/budgetDocs/AuditedFinancialStatement';
-import CitizensBudget from '../pages/budget/budgetDocs/CitizensBudget';
-import SFTAS from '../pages/budget/budgetDocs/SFTAS';
-import QBPR from '../pages/budget/budgetDocs/QBPR';
 import Authy from '../admin/authy';
+import NotFound from '../components/notFound/notFound';
+import { ServicesPage } from '../pages/services/ServicesPage';
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <App/>,
-      errorElement: <h1>This is an Error Page</h1>,
+      errorElement: <NotFound/>,
       children : [
         {
           path: "home",
@@ -80,41 +75,12 @@ import Authy from '../admin/authy';
           ]
         },
         {
-          path: "budget",
-          children : [
-            {
-              path : "",
-              element: <BudgetPage/>
-            },
-            {
-              path : "annual_budget_bill",
-              element: <AnnuaBudgetBill/>
-            },
-            {
-              path : "annual_budget_law",
-              element: <AnnualBudgetLaw/>
-            },
-            {
-              path : "audited_financial_statement",
-              element: <AuditedFinancialStatement/>
-            },
-            {
-              path : "citizens_budget",
-              element: <CitizensBudget/>
-            },
-            {
-              path : "sftas",
-              element: <SFTAS/>
-            },
-            {
-              path : "qbpr",
-              element: <QBPR/>
-            }
-          ]
+          path: "contact",
+          element: <Connect/>
         },
         {
-          path: "connect",
-          element: <Connect/>
+          path: "services",
+          element: <ServicesPage/>
         },
       ]
     }

@@ -29,12 +29,12 @@ export default function Admin() {
         
         </a>
 
-        <a href='/admin/resources' className="link resources resources__admin"> 
+        {/* <a href='/admin/resources' className="link resources resources__admin"> 
 
         <div className="icon"><DocMagnifyingGlass /></div> 
         <div className="text"> Resources </div>
         
-        </a>
+        </a> */}
 
         <a href='/admin/people' className="link people"> 
 
@@ -43,12 +43,12 @@ export default function Admin() {
         
         </a>
 
-        <a href='/admin/statistics' className="link statistics" > 
+        {/* <a href='/admin/statistics' className="link statistics" > 
 
         <div className="icon"><Database/></div> 
         <div className="text"> Statistics </div>
         
-        </a>
+        </a> */}
 
         <a href='/admin/contact_info' className="link contact_info"> 
 

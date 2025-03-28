@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import './header.scss'
 import Container from '../container/Container'
-import logo from '../../assets/logo/lasg__logo.png'
+import logo from '../../assets/logo/lagos_state_ministry_of_transportation_logo.png'
 import Button from '../button/Button'
 import { useLocation } from 'react-router-dom'
 import dropdownImg from '../../assets/mepb.png'
-import { FacebookTag, Instagram, Linkedin, Menu, NavArrowDown, Twitter } from 'iconoir-react'
+import { ArrowUpRight, FacebookTag, Instagram, Linkedin, Menu, NavArrowDown, Twitter } from 'iconoir-react'
 
 export default function Header() {
 
@@ -58,27 +58,27 @@ export default function Header() {
 
         <Container customClass = 'flex__combo__align__spacebtw'>
 
-            <div className="brand_area flex flex__align__center gap__15">
+            <div className="brand_area flex flex__align__center gap__15" onClick={()=>window.location.href = "/home"}>
 
               <div className="logo image__logo image__item"> 
                 <img src={logo} alt="Lagos State Government Ministry, Department & Agency" /> 
               </div>
 
-              <p className="font__12 text__trend brand__name"> Ministry of Economic,Planning and Budget </p>
+              <p className="font__12 text__trend brand__name"> Lagos state Ministry of Transportation </p>
 
             </div>
 
             {/* navigations */}
 
-            <div className="navigations flex flex__align__center gap__40 font__weight__600 desktop">
+            <div className="navigations flex flex__align__center font__weight__600 desktop">
 
                 <li id='nav' className='flex flex__align__center current' data-navigation = 'home'>
-                  <a className='dark  font__12 text__trend letter__spacing__2' href="/home">Home</a>
+                  <a className='dark  font__12 text__trend letter__spacing__2' href="/home"> Home </a>
                 </li>
 
                 <li id='nav' className='flex flex__align__center pin drop' data-navigation = 'about' >
 
-                  <a className='dark  font__12 text__trend letter__spacing__2'> <div className="main__nav">About mepb</div> <div className="icon"><NavArrowDown/></div> </a>
+                  <a className='dark  font__12 text__trend letter__spacing__2'> <div className="main__nav">About</div> <div className="icon"><NavArrowDown/></div> </a>
 
                   <div className="dropdown flex gap__20">
 
@@ -111,17 +111,17 @@ export default function Header() {
 
                 </li>
 
-                <li id='nav' className='flex flex__align__center' data-navigation = 'budget'>
-                  <a className='dark  font__12 text__trend letter__spacing__2' href="/budget">Budget Documents</a>
-                </li>
-
                 <li id='nav' className='flex flex__align__center' data-navigation = 'newsroom'>
                   <a className='dark  font__12 text__trend letter__spacing__2' href="/newsroom/1"> Newsroom </a>
                 </li>
 
 
-                <li id='nav' className='flex flex__align__center' data-navigation = 'connect'>
-                  <a className='dark  font__12 text__trend letter__spacing__2' href="/connect">Connect</a>
+                <li id='nav' className='flex flex__align__center' data-navigation = 'contact'>
+                  <a className='dark  font__12 text__trend letter__spacing__2' href="/contact">Contact</a>
+                </li>
+
+                <li id='nav' className='flex flex__align__center special__btn' data-navigation = 'services'>
+                  <a className='dark  font__12 text__trend letter__spacing__2' href="/services">Explore Services <ArrowUpRight/> </a>
                 </li>
 
             </div>
@@ -164,17 +164,18 @@ export default function Header() {
 
                   </li>
 
-                  <li id='nav' className='flex flex__align__center' data-navigation = 'resources'>
-                    <a className='dark  font__12 text__trend letter__spacing__2' href="/budget"> Budget Documents </a>
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'services'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/services"> Services</a>
                   </li>
 
                   <li id='nav' className='flex flex__align__center' data-navigation = 'newsroom'>
                     <a className='dark  font__12 text__trend letter__spacing__2' href="/newsroom/1"> Newsroom </a>
                   </li>
 
-                  <li id='nav' className='flex flex__align__center' data-navigation = 'connect'>
-                    <a className='dark  font__12 text__trend letter__spacing__2' href="/connect">Connect</a>
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'contact'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/contact">Contact</a>
                   </li>
+
 
               </div> ): null
 

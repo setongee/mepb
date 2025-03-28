@@ -25,15 +25,13 @@ const handleSignOut = () => {
 
 }
 
-console.log(userDetails)
-
   return (
 
     <div className="headingAdmin">
 
         <div className="brand flex">
           <div className="logo__side"> <img src={logo} alt="Lagos State MIST Logo" /> </div>
-          Ministry of Health Admin Portal
+          Ministry of Transportation Admin Portal
         </div>
 
         <div className="account">

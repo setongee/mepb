@@ -1,7 +1,7 @@
 import axios from "axios"
 import { env } from "../environment";
 
-const base_url = `${env}/mepb`
+const base_url = `${env}/mot`
 
 export const addSingleUser = async (data) => {
 

@@ -4,13 +4,6 @@ import Button from '../../components/button/Button'
 import './home.scss'
 import stat from '../../assets/landing/stats.png'
 
-// fins
-
-import fin1 from '../../assets/fin/1.png'
-import fin2 from '../../assets/fin/2.png'
-import fin3 from '../../assets/fin/3.png'
-import fin4 from '../../assets/fin/4.png'
-import fin5 from '../../assets/fin/5.png'
 import Newsroom from '../../components/newsroom/newsroom'
 import Footer from '../../components/footer/footerArea'
 

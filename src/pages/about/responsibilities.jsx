@@ -9,7 +9,7 @@ export default function Responsibilities() {
     
       useEffect(() => {
     
-        getAdminData("mepb").then( res => {
+        getAdminData("mot").then( res => {
             addContent(res[0]?.responsibilities);
         } )
     
@@ -19,6 +19,8 @@ export default function Responsibilities() {
     
         const content = document.getElementById('content');
         content.innerHTML = response;
+
+        console.log(response);
     
     }
 
@@ -42,7 +44,7 @@ export default function Responsibilities() {
 
                         <div className="mda__info">
 
-                            <div className="lead">Responsibilities of the Ministry of Planning & Budget </div>
+                            <div className="lead">Responsibilities of the Ministry of Transportation </div>
 
                         </div>
                     </div>

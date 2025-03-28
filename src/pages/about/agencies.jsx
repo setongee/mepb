@@ -12,7 +12,7 @@ export default function Agencies() {
 
 useEffect(() => {
 
-    getAdminData("mepb")
+    getAdminData("mot")
     .then( res => {
         refixArr(res[0].agencies);
     } )

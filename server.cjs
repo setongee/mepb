@@ -9,5 +9,5 @@ app.get('*', function (req, res) {
 });
 
 app.listen(8083, () => {
-    console.log("MEPB Application is running without any issues. App engineered by Setonji Avoseh!")
+    console.log("Ministry of Transportation Application is running without any issues. App engineered by Setonji Avoseh!")
 });

@@ -1,23 +1,34 @@
 .rrs{
     text-align: center;
 }
+
 .header{
     height: 90px;
-    border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
     position: relative;
     z-index: 9999999999;
-    background-color: #fff;
+    background-color: #F5F9FA;
+    // background-color: #fff;
     width: 100%;
     overflow-x: clip;
 
     .brand_area{
+
         width: 80%;
+        cursor: pointer;
+
+        .brand__name{
+            line-height: 18px;
+            font-weight: 600;
+            width: 250px;
+        }
     }
 
     .logo{
 
         flex-shrink: 0;
+        height: 50px;
+        width: 50px;
     }
 
     .mobile{
@@ -31,10 +42,56 @@
     .navigations{
 
         height: 90px;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+
+        a{
+            cursor: pointer;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            padding: 0 40px;
+            height: 100%;
+
+            &:hover{
+                background-color: #eee;
+            }
+
+            .icon{
+                height: 15px;
+                width: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 2px;
+                transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+        }
         
         li{
             height: 100%;
-            border-bottom: 2px solid transparent;
+            border-left: 1px solid #e7e7e7;
+            cursor: pointer;
+
+            &:first-child{
+                border-left: none;
+            }
+
+            &.special__btn{
+                background-color: #108a00;
+
+                a{
+                    color: #fff !important;
+                    font-weight: 700 !important;
+
+                    &:hover{
+                        background-color: #108a00;
+                    }
+                }
+
+            }
 
             .dropdown{
                 background-color: #fff;
@@ -42,7 +99,7 @@
                 width: 720px;
                 position: absolute;
                 top: 100%;
-                right: 0;
+                right: 255px;
                 padding: 20px;
                 border: 1px solid #eee;
                 text-transform: capitalize;
@@ -116,24 +173,6 @@
                     display: flex;
                 }
             }
-
-            a{
-                cursor: pointer;
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                width: max-content;
-
-                .icon{
-                    height: 15px;
-                    width: 15px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding-top: 2px;
-                    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                }
-            }
         }
     }
 }
@@ -141,11 +180,13 @@
 
 // active states
 .current{
-    
-    border-bottom: 2px solid #108a00 !important;
 
     a{
         color: #108a00;
+
+        &:hover{
+            background-color: transparent !important;
+        }
     };
 }
 
@@ -190,11 +231,11 @@
         }
 
         .mob{
-            height: calc(100svh - 125px);
+            height: calc(100svh - 90px);
             background-color: #fff;
             position: fixed;
             z-index: -1;
-            top: 125px;
+            top: 90px;
             left: 0;
             width: 100%;
             overflow: hidden;

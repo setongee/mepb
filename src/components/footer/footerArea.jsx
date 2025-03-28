@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import './footer.scss'
+import './footer__greenTheme.scss'
 import { ArrowUpRight, FacebookTag, Instagram, Linkedin, Mail, MapPin, Phone, X, Youtube } from 'iconoir-react'
 import Container from '../container/Container'
 
@@ -38,10 +38,9 @@ export default function Footer() {
 
                 <div className="socialsIcon flex">
 
-                  <a target = '_blank' href='https://www.instagram.com/lagosmepb/?hl=en' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
-                  <a target = '_blank' href = 'https://x.com/LagosMepb' className="icon"><X width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://web.facebook.com/lagosmepb/?_rdc=1&_rdr' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://www.youtube.com/@lagosmepb' className="icon"><Youtube width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href='https://www.instagram.com/lagosmot/?hl=en' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href = 'https://x.com/lagosMOT1/' className="icon"><X width={22} strokeWidth={1.6}/></a>
+                  <a target = '_blank' href='https://web.facebook.com/lagostransport2018/?_rdc=1&_rdr#' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
 
                 </div>
 
@@ -63,19 +62,19 @@ export default function Footer() {
 
                         </a>
 
-                        <a href = 'mailto:mepb@lagosstate.gov.ng' target='_Blank' className='flex font__14 gap__15 dark'> 
+                        <a target='_Blank' className='flex font__14 gap__15 dark'> 
 
                             <div className="icon"> <Mail/> </div> 
 
-                            mepb@lagosstate.gov.ng
+                            motrans@lagosstate.gov.ng
                             
                         </a>
 
-                        <a href = 'tel:234-1-4969061' target='_Blank' className='flex font__14 gap__15 dark'> 
+                        <a target='_Blank' className='flex font__14 gap__15 dark'> 
 
                             <div className="icon"> <Phone/> </div> 
 
-                            234-1-4969061
+                            09020009000 OR 09020004000
                             
                         </a>
 
