@@ -106,7 +106,7 @@ export default function Budget({type}) {
 
             <div className="naming">
 
-                <p> Budget Performance Report <ArrowRight width={18} /></p>
+                <p> Quarterly Budget Performance Reviews <ArrowRight width={18} /></p>
 
                 <span> { truncateText("The Quarterly Budget Performance Review is designed to evaluate the implementation of the budget to verify if the budget is performing according..", 100) } </span>
 
